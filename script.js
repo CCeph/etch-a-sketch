@@ -23,21 +23,17 @@ function enableHoverColor(gridSquare) {
 
 function displayGridSize() {
     let slider = document.getElementById("gridSlider")
-    
-
-    //slider.oninput = () => gridSize.textContent = `${slider.value}x${slider.value}`;
-}
-
-function getGridSize(sizeSlider) {
     let gridSize = document.getElementById("gridSize")
     gridSize.textContent = `${slider.value}x${slider.value}` //displays the default grid size.
 
+    slider.oninput = () => gridSize.textContent = `${slider.value}x${slider.value}`;
+}
+
+function getGridSize(sizeSlider) {
     sizeSlider.oninput = function() {
         grid = document.querySelector(".grid");
         grid.innerHTML = "";
         createGrid(sizeSlider.value);
-        let gridSize = document.getElementById("gridSize");
-        gridSize.textContent = `${slider.value}x${slider.value}`;
     }
 }
 
