@@ -12,3 +12,23 @@
 .activated {
     background-color: black;
 }
+
+.drawingBoard {
+    display: flex;
+}
+
+.mainBody {
+    display: flex;
+}
+
+.mainBody div {
+    flex: auto;
+}
+
+.mainBody .drawingBoard {
+    flex: 1 1 0%;
+}
+
+.drawingBoard div {
+    flex: auto;
+}
