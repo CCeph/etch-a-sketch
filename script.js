@@ -7,6 +7,7 @@ for (let i = 0; i <= 16; i++) {
     for (let i = 0; i <= 16; i++) {
         gridSquare = document.createElement('div');
         gridSquare.classList.add('square');
+        enableHoverColor(gridSquare)
         gridSquare.style.cssText = "flex: auto; border-style: solid; border-color: black; border-width: thin;"
         gridRow.appendChild(gridSquare);
     }
@@ -14,6 +15,11 @@ for (let i = 0; i <= 16; i++) {
 }
 }
 
+
+function enableHoverColor(gridSquare) {
+    gridSquare.addEventListener('mouseenter', () =>
+    gridSquare.classList.add('activated'))
+}
 
 function main() {
     createGrid();
