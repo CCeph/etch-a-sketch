@@ -21,14 +21,6 @@ function enableHoverColor(gridSquare) {
     gridSquare.classList.add('activated'));
 }
 
-function displayGridSize() {
-    let slider = document.getElementById("gridSlider")
-    let gridSize = document.getElementById("gridSize")
-    gridSize.textContent = `${slider.value}x${slider.value}` //displays the default grid size.
-
-    slider.oninput = () => gridSize.textContent = `${slider.value}x${slider.value}`;
-}
-
 function getGridSize(sizeSlider) {
     let gridSize = document.getElementById("gridSize")
     gridSize.textContent = `${sizeSlider.value}x${sizeSlider.value}` //displays the default grid size.
@@ -45,7 +37,6 @@ function main() {
     let sizeSlider = document.getElementById("gridSlider");
     getGridSize(sizeSlider);
     createGrid(sizeSlider.value);
-    //displayGridSize();
 }
 
 main();
