@@ -1,5 +1,6 @@
 function createGrid(sizeSlider) {
     grid = document.querySelector(".grid");
+    grid.innerHTML = "";
     for (let i = 0; i < sizeSlider; i++) {
         gridRow = document.createElement('div');
         gridRow.classList.add('row');
@@ -71,11 +72,21 @@ function enableHoverColor(gridSquare) {
     });
 }
 
+function enableDefaultMode() {
+    let button = document.querySelector(".defaultMode");
+    button.addEventListener("click", function () {
+        let sizeSlider = document.getElementById("gridSlider");
+        getGridSize(sizeSlider);
+        createGrid(sizeSlider.value);
+    });
+}
+
 function main() {
     let sizeSlider = document.getElementById("gridSlider");
     getGridSize(sizeSlider);
     createGrid(sizeSlider.value);
     enableColorMode();
+    enableDefaultMode();
 }
 
 main();
