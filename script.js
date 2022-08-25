@@ -33,10 +33,20 @@ function getGridSize(sizeSlider) {
     }
 }
 
+function enableColorMode() {
+    let button = document.querySelector(".colorMode");
+    button.addEventListener("click", createColorGrid);
+}
+
+function createColorGrid() {
+    console.log("This exists");
+}
+
 function main() {
     let sizeSlider = document.getElementById("gridSlider");
     getGridSize(sizeSlider);
     createGrid(sizeSlider.value);
+    enableColorMode();
 }
 
 main();
