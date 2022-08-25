@@ -45,3 +45,7 @@
 .controls {
     justify-content: center;
 }
+
+.controls .colorMode {
+    margin-top: 10px;
+}
