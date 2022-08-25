@@ -50,3 +50,7 @@
 .defaultMode {
     margin-top: 10px;
 }
+
+.controls p {
+    margin-bottom: 0px;
+}
