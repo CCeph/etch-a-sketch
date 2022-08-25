@@ -13,22 +13,35 @@
     background-color: black;
 }
 
-.drawingBoard {
-    display: flex;
-}
-
 .mainBody {
     display: flex;
-}
-
-.mainBody div {
-    flex: auto;
+    justify-content: center;
 }
 
 .mainBody .drawingBoard {
-    flex: 1 1 0%;
+    display: flex;
 }
 
-.drawingBoard div {
-    flex: auto;
+.mainBody .left,
+.right {
+    flex: 1;
+}
+
+.mainBody .left {
+    display: flex;
+}
+
+.left .controls {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+}
+
+.left .left {
+    flex: 1;
+}
+
+.controls {
+    justify-content: center;
 }
