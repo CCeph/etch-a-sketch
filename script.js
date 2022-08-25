@@ -7,7 +7,7 @@ function createGrid(sizeSlider) {
         for (let i = 0; i < sizeSlider; i++) {
             gridSquare = document.createElement('div');
             gridSquare.classList.add('square');
-            enableHoverColor(gridSquare)
+            enableHoverBlack(gridSquare)
             gridSquare.style.cssText = "flex: auto; border-style: solid; border-color: black; border-width: thin;"
             gridRow.appendChild(gridSquare);
         }
@@ -16,7 +16,7 @@ function createGrid(sizeSlider) {
 }
 
 
-function enableHoverColor(gridSquare) {
+function enableHoverBlack(gridSquare) {
     gridSquare.addEventListener('mouseenter', () =>
     gridSquare.classList.add('activated'));
 }
@@ -39,7 +39,36 @@ function enableColorMode() {
 }
 
 function createColorGrid() {
-    console.log("This exists");
+    slider = document.getElementById("gridSlider");
+    sizeSlider = slider.value
+
+    grid = document.querySelector(".grid");
+    grid.innerHTML = "";
+
+    for (let i = 0; i < sizeSlider; i++) {
+        gridRow = document.createElement('div');
+        gridRow.classList.add('row');
+        gridRow.style.cssText = "flex: auto; display: flex;";
+        for (let i = 0; i < sizeSlider; i++) {
+            gridSquare = document.createElement('div');
+            gridSquare.classList.add('square');
+            enableHoverColor(gridSquare)
+            gridSquare.style.cssText = "flex: auto; border-style: solid; border-color: black; border-width: thin;"
+            gridRow.appendChild(gridSquare);
+        }
+        grid.appendChild(gridRow);
+    }
+}
+
+function enableHoverColor(gridSquare) {
+    gridSquare.addEventListener('mouseenter', function() {
+        const random_hex_color_code = () => {
+            let n = (Math.random() * 0xfffff * 1000000).toString(16);
+            return '#' + n.slice(0, 6);
+          };
+        
+        gridSquare.style.cssText += `background-color: ${random_hex_color_code()};`
+    });
 }
 
 function main() {
